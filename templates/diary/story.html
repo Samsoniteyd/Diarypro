@@ -1,0 +1,37 @@
+
+{% extends "base.html" %}
+{% block title %}
+  story page
+{% endblock title %}
+
+{% block content %}
+
+<section id="app" class="my-3">
+  <div class="container my-3">
+    <div class="row">
+      <div class="col-md-5 mx-auto">
+        <div class="card">
+
+
+
+            {% if all %}
+            <h4> {{all.title |title }} </h4>
+            <p class="lead"> {{all.description}} </p>
+            <a href="{% url 'update' all.id %}" class="btn btn-primary" >update</a>
+            {% else %}
+            <p class="lead bg-danger text-white">this story does not exists</p>
+            {% endif %}
+        </div>
+          
+        </div>
+      
+    </div>
+
+  </div>
+</section>
+  
+{% endblock content %}
+
+
+    
+
